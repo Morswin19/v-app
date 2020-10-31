@@ -1,14 +1,7 @@
 <template>
   <div class="wrapper">
-    <div class="search">
-      <label for="search">Search: </label>
-      <input
-        id="search"
-        name="search"
-        v-model="searchValue"
-        @input="handleInput"
-      />
-    </div>
+    <Claim />
+    <SearchInput />
     <ul class="results">
       <li v-for="item in results" :key="item.id">
         <p>{{item.tags}}</p>
@@ -19,11 +12,17 @@
 
 <script>
 import debounce from 'lodash.debounce';
+import Claim from '@/components/Claim.vue';
+import SearchInput from '@/components/SearchInput.vue';
 
 const API = 'https://pixabay.com/api/?key=18923603-d3c03a7301e1b80b95dd91273';
 
 export default {
   name: 'Search',
+  components: {
+    Claim,
+    SearchInput,
+  },
   data() {
     return {
       searchValue: '',
@@ -50,18 +49,14 @@ export default {
     display: flex
     flex-direction: column
     align-items: center
+    justify-content: center
     width: 100%
+    height: 100vh
     margin: 0
-    padding: 30px
-    .search
-      display: flex
-      flex-direction: column
-      width: 250px
-      label
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', sans-serif
-      input
-        height: 20px
-        width: 100%
-        border: none
-        border-bottom: 2px solid blue
+    padding: 50px 30px
+    background-image: url('../assets/background3.jpg')
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: 50% 0%
+
 </style>
