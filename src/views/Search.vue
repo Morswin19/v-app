@@ -13,8 +13,19 @@
       :dark="step === 1"
       />
     <div class="results" v-if="results && !loading && step === 1">
-      <Item v-for="item in results" :item="item" :key="item.id"/>
+      <Item
+        v-for="item in results"
+        :item="item"
+        :key="item.id"
+        @click.native="handleModalOpen(item)"/>
     </div>
+    <div class="lds-dual-ring" v-if="step === 1 && loading"></div>
+    <Modal
+      v-if="modalOpen"
+      @closeModal="modalOpen = false"
+      :item="modalItem"
+    />
+    <img src='../assets/pixaLogo.png' class="pixaLogo" />
   </div>
 </template>
 
@@ -24,6 +35,7 @@ import Claim from '@/components/Claim.vue';
 import SearchInput from '@/components/SearchInput.vue';
 import MainImage from '@/components/MainImage.vue';
 import Item from '@/components/Item.vue';
+import Modal from '@/components/Modal.vue';
 
 const API = 'https://pixabay.com/api/?key=18923603-d3c03a7301e1b80b95dd91273';
 
@@ -34,9 +46,12 @@ export default {
     SearchInput,
     MainImage,
     Item,
+    Modal,
   },
   data() {
     return {
+      modalOpen: false,
+      modalItem: null,
       loading: 'false',
       step: 0,
       searchValue: '',
@@ -44,15 +59,19 @@ export default {
     };
   },
   methods: {
+    handleModalOpen(item) {
+      this.modalOpen = true;
+      this.modalItem = item;
+    },
     handleInput: debounce(function () {
       this.loading = true;
-      console.log(this.searchValue);
-      fetch(`${API}&q=${this.searchValue}&image_type=photo&per_page=100`)
+      fetch(`${API}&q=${this.searchValue}&image_type=photo&per_page=120`)
         .then((response) => response.json())
         .then((data) => {
           this.results = data.hits;
           this.loading = false;
           this.step = 1;
+          // console.log(data.hits[0]);
         })
         .catch((error) => {
           console.log(error);
@@ -92,6 +111,46 @@ export default {
   .logo
     position: absolute
     top: 40px
+    left: 50px
     font-weight: bold
+    margin-bottom: 50px
+
+  .results
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    margin-top: 50px
+    grid-gap: 20px
+
+  .pixaLogo
+    position: absolute
+    width: 50px
+    height: 50px
+    bottom: 20px
+    right: 20px
+
+  .lds-dual-ring
+    margin-top: 100px
+    display: inline-block
+    width: 80px
+    height: 80px
+
+  .lds-dual-ring:after
+    content: " "
+    display: block
+    width: 64px
+    height: 64px
+    margin: 8px
+    border-radius: 50%
+    border: 6px solid black
+    border-color: black transparent black transparent
+    animation: lds-dual-ring 1.2s linear infinite
+
+  @keyframes lds-dual-ring
+    0%
+      transform: rotate(0deg)
+
+    100%
+      transform: rotate(360deg)
 
 </style>

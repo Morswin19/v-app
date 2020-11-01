@@ -1,14 +1,10 @@
 <template>
-  <div>
-    <div v-for="item in results" :key="item.id">
+  <div class="itemWrapper">
         <div :style="style" class="item"></div>
-    </div>
   </div>
 </template>
 
 <script>
-// console.log(this.photo);
-
 export default {
   name: 'Item',
   props: {
@@ -19,7 +15,7 @@ export default {
   },
   data() {
     return {
-      photo: this.item.largeImageURL,
+      photo: this.item.webformatURL,
     };
   },
   computed: {
@@ -31,10 +27,15 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+  .itemWrapper
+    // margin: 10px
     .item
-        width: 200px
+        width: 25vw
+        width: 300px
         height: 300px
         background-size: cover
         background-repeat: no-repeat
         background-position: 50%
+        box-shadow: 5px 5px 10px 5px rgba(0,0,0,0.15)
+        cursor: pointer
 </style>

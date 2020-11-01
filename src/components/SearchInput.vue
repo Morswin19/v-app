@@ -41,16 +41,13 @@ export default {
             color: white
             text-align: center
             font-size: 15px
+            font-weight: 600
             padding: 5px
             transition: box-shadow .3s
-            // border-radius: 30px
-        input:focus
-            box-shadow: 0px 10px 20px -8px rgba(255,255,255,0.4)
-            // background: rgba(0,0,0,0.5)
         .dark
-            color: navy
-            border-bottom-color: navy
+            color: black
+            border-bottom-color: black
+            margin-top: -20px
         input:focus
             box-shadow: 0px 10px 20px -8px rgba(0,0,0,0.4)
-            // background: rgba(0,0,0,0.5)
 </style>
