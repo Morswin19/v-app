@@ -1,7 +1,6 @@
 <template>
   <div class="app">
     <div class='headWrapper'>
-    <div>Logo</div>
     <div class="nav">
       <router-link to="/">photos</router-link>
       <router-link to="/about">about</router-link>
@@ -17,6 +16,8 @@
     box-sizing: border-box
     margin: 0
     padding: 0
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
 
   body
     font-family: 'Montserrat', sans-serif
