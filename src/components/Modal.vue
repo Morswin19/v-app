@@ -64,7 +64,6 @@ export default {
         top: 0
         left: 0
         background-color: #fff
-
         .innerWrapper
             display: flex
             justify-content: center
@@ -72,15 +71,12 @@ export default {
             height: 100%
             padding: 50px
             flex-direction: column
-
             .photo
                 max-width: 100%
                 height: auto
-
                 img
                     max-width: 100%
                     max-height: 400px
-
             .description
                 .descriptionData
                     margin-bottom: 50px
@@ -110,7 +106,6 @@ export default {
                             cursor: pointer
                             text-decoration: none
                             margin-right: 10px
-
         .close
             position: absolute
             padding: 30px
@@ -119,7 +114,6 @@ export default {
             cursor: pointer
             top: 0px
             right: 0px
-
             &::before,
             &::after
                 position: absolute
@@ -130,12 +124,10 @@ export default {
                 height: 2px
                 background: black
                 display: block
-
             &::before
                 transform: rotate(45deg)
             &::after
                 transform: rotate(-45deg)
-
     @media (min-width: 1024px)
         .outerWrapper
             max-width: 70%
@@ -146,12 +138,9 @@ export default {
             bottom: 0
             margin: auto
             box-shadow: 10px 30px 30px 20px rgba(0,0,0,0.5)
-
             .innerWrapper
                 flex-direction: row
-
                 .photo
                     max-width: 50%
                     margin-right: 30px
-
 </style>
