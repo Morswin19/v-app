@@ -31,11 +31,16 @@ export default {
     // margin: 10px
     .item
         width: 25vw
-        width: 300px
-        height: 300px
+        width: 200px
+        height: 200px
         background-size: cover
         background-repeat: no-repeat
         background-position: 50%
         box-shadow: 5px 5px 10px 5px rgba(0,0,0,0.15)
         cursor: pointer
+  @media(min-width: 1024px)
+    .itemWrapper
+      .item
+        width: 300px
+        height: 300px
 </style>

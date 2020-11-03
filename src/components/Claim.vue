@@ -22,15 +22,13 @@ export default {
         flex-direction: column
         justify-content: center
         align-items: center
-        margin-bottom: 50px
         color: #FFFFFF
-        // background: rgba(0,0,0,0.2)
         border-radius: 40px
         padding: 30px
         text-align: center
         .claim
             font-size: 50px
-            margin-bottom: 50px
+            margin-bottom: 20px
         .description
             font-size: 15px
             margin-bottom: 15px

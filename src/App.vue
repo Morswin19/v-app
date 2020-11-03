@@ -65,7 +65,7 @@ export default {
     },
     handleInput: debounce(function () {
       this.loading = true;
-      fetch(`${API}&q=${this.searchValue}&image_type=photo&per_page=120`)
+      fetch(`${API}&q=${this.searchValue}&image_type=photo&per_page=180`)
         .then((response) => response.json())
         .then((data) => {
           this.results = data.hits;
@@ -125,8 +125,8 @@ export default {
 
   .logo
     position: absolute
-    top: 40px
-    left: 50px
+    top: 20px
+    left: 30px
     font-weight: bold
     margin-bottom: 50px
 
