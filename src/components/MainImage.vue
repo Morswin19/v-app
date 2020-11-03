@@ -14,7 +14,7 @@ export default {
         z-index: -1
         width: 100%
         height: 100vh
-        background-image: url('../assets/background14.jpg')
+        background-image: url('../assets/background15.jpg')
         background-repeat: no-repeat
         background-size: cover
         background-position: 50% 0%

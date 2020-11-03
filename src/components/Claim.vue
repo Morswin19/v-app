@@ -5,7 +5,7 @@
         Open your mind for billions of incredible photos
     </p>
     <p class="description">
-        Search for your favourite subject
+        Search for your favourite
     </p>
   </div>
 </template>
@@ -26,11 +26,14 @@ export default {
         border-radius: 40px
         padding: 30px
         text-align: center
+        font-family: 'Montserrat', sans-serif
         .claim
             font-size: 50px
             margin-bottom: 20px
+            letter-spacing: 10px
         .description
             font-size: 15px
             margin-bottom: 15px
+            letter-spacing: 5px
 
 </style>

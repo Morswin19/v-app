@@ -71,7 +71,6 @@ export default {
           this.results = data.hits;
           this.loading = false;
           this.step = 1;
-          // console.log(data.hits[0]);
         })
         .catch((error) => {
           console.log(error);
@@ -83,6 +82,7 @@ export default {
 
 <style lang="sass" scoped>
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;900&display=swap')
+
   *
     box-sizing: border-box
     margin: 0
@@ -129,6 +129,7 @@ export default {
     left: 30px
     font-weight: bold
     margin-bottom: 50px
+    cursor: default
 
   .results
     display: flex
