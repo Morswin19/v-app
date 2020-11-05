@@ -116,7 +116,7 @@ export default {
     align-items: center
     justify-content: center
     width: 100%
-    min-height: 100vh
+    min-height: 98vh
     margin: 0
     padding: 50px 30px
 

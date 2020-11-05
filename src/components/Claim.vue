@@ -23,13 +23,13 @@ export default {
         justify-content: center
         align-items: center
         color: #FFFFFF
-        border-radius: 40px
-        padding: 30px
+        // border-radius: 40px
+        // padding: 30px
         text-align: center
         font-family: 'Montserrat', sans-serif
         .claim
             font-size: 50px
-            margin-bottom: 20px
+            // margin-bottom: 20px
             letter-spacing: 10px
         .description
             font-size: 15px
